@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A propos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../Style/stylesheet.css">
+
+<!-- Import Montserrat (400 normal, 500 medium) -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../Processus/processus.css" />
+<div id="nav-placeholder"></div>
+
+  <!-- ✅ NAVIGATION -->
+  <nav>
+    <div id="nav-placeholder"></div>
+<script>
+  fetch('../Nav/nav.html')  // Chemin depuis Projets vers Nav
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+
+      // Ajoute dynamiquement le CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '../Nav/nav.css';
+      document.head.appendChild(link);
+
+      // Ajoute dynamiquement le JS pour les yeux
+      const script = document.createElement("script");
+      script.src = "../Nav/nav.js";
+      document.body.appendChild(script);
+    });
+</script>
+  </nav>
+
+</head>
+
+<body class="page-processus">
+
+    <main class="processus fade-in">
+        <h1 class="fade-in">Le processus créatif</h1>
+        <p class="intro fade-in">
+          Chaque projet est unique, mais ma méthode reste la même : 
+          un processus structuré qui allie écoute, exploration et collaboration.
+        </p>
+      
+        <div class="steps">
+          <div class="step fade-in">
+            <h2> <img src="../Processus/discussion.png" alt="Icône discussion"> Discussion & brief</h2>
+            <p>On échange autour de vos besoins, de vos valeurs, du public visé, ainsi que votre vision artistique, afin de bien cerner l’univers du projet. Il est possible que je vous communique un fichier à remplir qui permet de vous aider dans votre réfléxion créative, en fonction de vos besoins.</p>
+          </div>
+      
+          <div class="step fade-in">
+            <h2> <img src="../Processus/recherche.png" alt="Icône recherche"> Recherche & inspiration</h2>
+            <p>Je prépare selon vos besoins un moodboard e/ou des croquis préliminaires pour définir la direction artistique avec vous.</p>
+          </div>
+      
+          <div class="step fade-in">
+            <h2> <img src="../Processus/creation.png" alt="Icône création"> Création & propositions</h2>
+            <p>Développement de concepts visuels et présentation de pistes créatives adaptées à vos attentes.</p>
+          </div>
+      
+          <div class="step fade-in">
+            <h2> <img src="../Processus/ajuster.png" alt="Icône ajustements"> Ajustements</h2>
+            <p>Nous affinons ensemble le projet grâce à vos retours et itérations. Cette étape peut prendre autant de temps que vous avez besoin pour achever LE résultat désiré.</p>
+          </div>
+      
+          <div class="step fade-in">
+            <h2> <img src="../Processus/livraison.png" alt="Icône discussion"> Livraison & suivi</h2>
+            <p>Remise des fichiers finaux et accompagnement éventuel pour vos déclinaisons futures. Remise des fichiers dès réception du paiement. </p>
+          </div>
+        </div>
+      </main>
+   
+      <div id="footer-placeholder"></div>
+<script src="../Footer/footer.js"></script>
+
+<script src="../Processus/processus.js"></script>
+
+</body>
+
+
+
+
+</html>

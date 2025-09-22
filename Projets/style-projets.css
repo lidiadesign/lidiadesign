@@ -1,0 +1,240 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: url("fond-projet.png") repeat;
+  background-size: 600px 600px; /* ajuste selon la texture */
+  color: #2A2A2A; /* texte noir */
+}
+
+.projets-header {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.projets-header h1 {
+  font-size: 3rem;
+  padding-top: 50px;
+  margin-bottom: 10px;
+  color: #4c2f21; 
+  font-family: 'Domine', serif; /* optionnel mais + joli */
+}
+
+.projets-header p {
+  font-size: 1.2rem;
+  color: #2A2A2A; /* noir */
+}
+
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projet-item {
+  aspect-ratio: 1 / 1; /* carré parfait */
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projet-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* zoom pour remplir */
+  display: block;
+}
+
+.projet-item:hover img {
+  transform: scale(1.05) translateY(-4px);
+  filter: brightness(1.05) contrast(1.02);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.projet-item:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* === POPUP CONTAINER === */
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(6px); /* 🔥 effet flou */
+  background: rgba(0, 0, 0, 0.4); /* plus doux que 0.8 */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup.open {
+  display: flex;
+}
+
+/* === POPUP CONTENT === */
+.popup-content {
+  background: #ECEEDF;
+  color: #2A2A2A;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 90vw;
+  max-height: 90vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: visible; 
+}
+
+/* Animation zoom-in */
+.popup-content {
+  animation: popupZoom 0.4s ease forwards;
+  transform-origin: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* ✨ shadow douce */
+}
+
+@keyframes popupZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* === IMAGE WRAPPER === */
+.popup-img-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  max-height: 80vh;
+}
+
+/* === IMAGE === */
+#popup-img img {
+  max-width: 85vw;
+  max-height: 65vh; /* ⚠️ Réduction légère ici */
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  display: block;
+}
+
+/* === TEXT === */
+#popup-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  font-family: 'Domine', serif;
+  margin-top: 1rem;
+}
+
+#popup-desc {
+  margin: 1.2rem auto 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #2A2A2A;
+  max-width: 800px;
+  line-height: 1.6;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #ECEEDF; /* même fond que le popup */
+}
+
+
+/* === ARROWS === */
+.popup-arrow-left,
+.popup-arrow-right {
+  font-size: 2.2rem;
+  color:  #BBDCE5;         /* bleu doux (équivalent Tailwind "blue-500") */
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.popup-arrow-left:hover,
+.popup-arrow-right:hover {
+  color: #D9C4B0;
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+
+/* === CLOSE BUTTON === */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #BBDCE5; /* bleu clair */
+}
+
+.close-btn:hover {
+  color: #D9C4B0; /* accent doux */
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+
+#popup-desc::-webkit-scrollbar {
+  width: 6px;
+}
+#popup-desc::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+
+/* ✨ Effet hover avec bounce et ombre douce */
+.projet-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ajoute aussi une transition de base pour éviter le “saut” au retour */
+.projet-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/*-COULEUR FOOTER-*/
+
+.site-footer {
+  background: url("../Projets/fond-projet.png") repeat;
+  background-size: 600px 600px;
+}

@@ -1,0 +1,138 @@
+/* === FOOTER GLOBAL === */
+.site-footer {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 60px;
+
+  /* Animation fade-in */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.site-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NAV, SOCIAL & LEGAL LINKS — unifiés */
+.footer-nav a,
+.footer-socials a,
+.footer-legal a {
+  margin: 0 12px;
+  color: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  transition: 
+    color 0.3s ease, 
+    transform 0.25s ease, 
+    font-weight 0.25s ease;
+}
+
+/* Effet hover élégant avec bounce + couleur + gras */
+.footer-nav a:hover,
+.footer-socials a:hover,
+.footer-legal a:hover {
+  color: #BBDCE5; 
+  text-decoration: underline;
+  transform: scale(1.08) translateY(-2px);
+  font-weight: 600;
+}
+
+/* Icônes SVG */
+.footer-socials svg {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  color: inherit;
+  transition: color 0.3s ease;
+  margin-top: 20px;
+}
+
+/* LEGAL TEXT */
+.footer-legal {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  margin-top: 20px; /* espace entre nav/social et bloc legal */
+}
+
+.footer-legal p {
+  margin: 5px 0;
+  color: inherit; /* hérite de la variante (selon page) */
+}
+
+/* === VARIANTES SELON PAGE === */
+
+/* Accueil & Contact : fond bleu clair → texte foncé */
+.page-home .site-footer,
+.page-home .footer-nav a,
+.page-home .footer-socials a,
+.page-home .footer-legal,
+.page-home .footer-legal a,
+.page-contact .site-footer,
+.page-contact .footer-nav a,
+.page-contact .footer-socials a,
+.page-contact .footer-legal,
+.page-contact .footer-legal a {
+  color: #2A2A2A;
+}
+.page-home .footer-legal p,
+.page-contact .footer-legal p {
+  color: #2A2A2A;
+}
+.page-home .footer-nav a:hover,
+.page-home .footer-socials a:hover,
+.page-home .footer-legal a:hover,
+.page-contact .footer-nav a:hover,
+.page-contact .footer-socials a:hover,
+.page-contact .footer-legal a:hover {
+  color: #4c2f21; /* marron foncé */
+}
+
+/* Projets & Processus : fond beige → texte marron foncé */
+.page-projets .site-footer,
+.page-projets .footer-nav a,
+.page-projets .footer-socials a,
+.page-projets .footer-legal,
+.page-projets .footer-legal a,
+.page-processus .site-footer,
+.page-processus .footer-nav a,
+.page-processus .footer-socials a,
+.page-processus .footer-legal,
+.page-processus .footer-legal a {
+  color: #4c2f21;
+}
+.page-projets .footer-legal p,
+.page-processus .footer-legal p {
+  color: #4c2f21;
+}
+.page-projets .footer-nav a:hover,
+.page-projets .footer-socials a:hover,
+.page-projets .footer-legal a:hover,
+.page-processus .footer-nav a:hover,
+.page-processus .footer-socials a:hover,
+.page-processus .footer-legal a:hover {
+  color: #000;
+}
+
+/* About : fond marron foncé → texte clair */
+.page-about .site-footer,
+.page-about .footer-nav a,
+.page-about .footer-socials a,
+.page-about .footer-legal,
+.page-about .footer-legal a {
+  color: #ddd;
+}
+.page-about .footer-legal p {
+  color: #ddd;
+}
+.page-about .footer-nav a:hover,
+.page-about .footer-socials a:hover,
+.page-about .footer-legal a:hover {
+  color: #fff;
+}

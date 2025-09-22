@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A propos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../Style/stylesheet.css">
+
+  <link rel="stylesheet" href="../About/about.css" />
+
+  
+
+</head>
+
+<!-- ✅ NAVIGATION -->
+<nav>
+  <div id="nav-placeholder"></div>
+<script>
+fetch('../Nav/nav.html')  // Chemin depuis Projets vers Nav
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('nav-placeholder').innerHTML = data;
+
+    // Ajoute dynamiquement le CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '../Nav/nav.css';
+    document.head.appendChild(link);
+
+    // Ajoute dynamiquement le JS pour les yeux
+    const script = document.createElement("script");
+    script.src = "../Nav/nav.js";
+    document.body.appendChild(script);
+  });
+</script>
+</nav>
+
+<body class="page-about">
+
+  <!-- ✅ CONTENU ABOUT -->
+  <main class="about-content fade-in">
+      <div class="about-photo">
+        <img src="../About/about-portrait.gif" alt="Animation de Lidia">
+      </div>
+
+    <div class="about-text fade-in">
+      <h1 class="fade-in">Bonjour, je suis Lidia, graphiste et illustratrice franco-polonaise.</h1>
+      <p class="fade-in">
+       Depuis toute petite, le dessin est mon langage favori : un moyen de donner vie à des émotions et de transformer une idée en quelque chose de beau, de visuel et de sensible.
+Après un parcours à NEOMA Business School et une immersion en design à intuit.lab, j’ai orienté mes études vers la création visuelle. J’ai également travaillé en community management et marketing, ce qui m’a permis de relier créativité et stratégie dans des projets concrets. Je me lance aujourd’hui en freelance, avec une grande fouge et envie de collaborer sur des projets variés et stimulants.
+Récemment, j’ai eu la chance de réaliser un projet marquant pour le Café Hugo, Place des Vosges à Paris : mes illustrations ornent aujourd’hui les tables et la carte du lieu. Le plus gratifiant a été de voir les clients s’approprier mon travail, certains le coloriant sur place ou l’emportant chez eux pour le conserver – un vrai témoignage de la valeur émotionnelle que peut avoir une image.
+Passionnée par les voyages, la musique et les jeux vidéo, je nourris mes créations d’influences multiples. Curieuse et adaptable, j’aime explorer différents styles pour trouver le juste équilibre entre esthétique et émotion. 
+Mon approche en trois mots : passion, adaptabilité, collaboration. 
+      </p><p class="fade-in">Parce que créer, c’est avant tout partager.
+      </p>
+      <!-- etc. continue avec ton texte complet -->
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+<script src="../Footer/footer.js"></script>
+<script src="../About/about.js"></script>
+</body>
+
+
+
+</html>

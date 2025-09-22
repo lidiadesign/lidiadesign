@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets – Lidia Design</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../Style/stylesheet.css">
+
+  <link rel="stylesheet" href="../Projets/style-projets.css">
+
+
+</head>
+<body class="page-projets">
+
+  <!-- ✅ NAVIGATION -->
+  <nav>
+    <div id="nav-placeholder"></div>
+<script>
+  fetch('../Nav/nav.html')  // Chemin depuis Projets vers Nav
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+
+      // Ajoute dynamiquement le CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '../Nav/nav.css';
+      document.head.appendChild(link);
+
+      // Ajoute dynamiquement le JS pour les yeux
+      const script = document.createElement("script");
+      script.src = "../Nav/nav.js";
+      document.body.appendChild(script);
+    });
+</script>
+  </nav>
+
+ <!-- ✅ HEADER -->
+ <header class="projets-header">
+  <h1 class="fade-in">Mes projets récents</h1>
+  <p class="fade-in">Voici une collection de mes projets graphiques, illustrations, design digital ou webdesign les plus récents.</p>
+</header>
+
+<!-- ✅ GRID PROJETS -->
+<section class="projets-grid">
+  <div class="projet-item fade-in">
+    <img src="../Projets/Setdetable.png" alt="Setdetable">
+    <div class="overlay"><h3>Une nouvelle identité graphique pour la Café Hugo</h3></div>
+  </div>
+
+  <div class="projet-item fade-in">
+    <img src="../Projets/Babouchka.png" alt="Illustrations iPad – ici : Babouchka">
+    <div class="overlay"><h3>Illustrations iPad – ici : Babouchka</h3></div>
+  </div>
+
+
+  <div class="projet-item fade-in">
+    <img src="../Projets/sitesite.png" alt="Mon site Lidia Design">
+    <div class="overlay"><h3>Mon site Lidia Design</h3></div>
+  </div>
+
+
+  <div class="projet-item fade-in">
+    <img src="../Projets/Chiotacrylique.png" alt="Portraits et paysages aux feutres acryliques">
+    <div class="overlay"><h3>Portraits et paysages aux feutres acryliques</h3></div>
+  </div>
+ 
+  <div class="projet-item fade-in">
+    <img src="../Projets/LogoCafeHugo.png" alt="Café Hugo – Logo">
+    <div class="overlay"><h3>Café Hugo – Logo</h3></div>
+  </div>
+
+  <div class="projet-item fade-in">
+    <img src="../Projets/Vinyle4.png" alt="Affiches & Vinyles – Projets scolaires">
+    <div class="overlay"><h3>Affiches & Vinyles – Projets scolaires</h3></div>
+  </div>
+</section>
+
+<!-- ✅ POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+
+    <div class="popup-img-nav">
+      <span class="popup-arrow-left">←</span>
+      <div id="popup-img"></div>
+      <span class="popup-arrow-right">→</span>
+    </div>
+
+    <h2 id="popup-title"></h2>
+    <p id="popup-desc"></p>
+  </div>
+</div>
+
+<script src="../Projets/projets.js"></script>
+
+<div id="footer-placeholder"></div>
+
+<script src="/Footer/footer.js"></script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,31 @@
+.page-mentions {
+    background: url("fond-contact.png") repeat;
+    background-size: 600px 600px;
+    font-family: 'Montserrat', sans-serif;
+    color: #2A2A2A;
+    line-height: 1.6;
+  }
+  
+  .mentions-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+  }
+  
+  .mentions-container h1 {
+    font-family: 'Domine', serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4c2f21;
+  }
+  
+  .mentions-container h2 {
+    margin-top: 30px;
+    font-size: 1.3rem;
+    color: #4c2f21;
+  }
+  
+  .mentions-container p {
+    margin-bottom: 15px;
+  }
+  

@@ -1,0 +1,344 @@
+/* --------------------------
+   RESET
+-------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --------------------------
+   NAVIGATION
+-------------------------- */
+.main-menu {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 50px;
+  z-index: 1000;
+  align-items: center;
+}
+
+.main-menu img {
+  width: 24px;
+  height: auto;
+  filter: brightness(0) invert(1) drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.6));
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.main-menu img:hover {
+  transform: scale(1.3);
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.menu-item span {
+  margin-top: 6px;
+  font-size: 0.65rem;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-item:hover span {
+  opacity: 1;
+}
+
+.nav-logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.nav-logo.visible {
+  opacity: 1;
+}
+
+.nav-container {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  height: 60px;
+}
+
+.nav-logo svg {
+  height: 100%;
+  width: auto;
+}
+
+/* --------------------------
+   GLOBAL
+-------------------------- */
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: url("fond-homepage.png") repeat;
+  background-size: 600px 600px;
+}
+
+/* --------------------------
+   LOGO SVG
+-------------------------- */
+.svg-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.svg-container.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  color: #fff;
+}
+
+#eye1, #eye2 {
+  transition: transform 0.1s ease-out;
+}
+
+/* --------------------------
+   CAROUSEL
+-------------------------- */
+.carousel-background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* --------------------------
+   INTRO SECTION
+-------------------------- */
+.intro-section {
+  position: relative;
+  margin-top: -40px; /* chevauche légèrement l’image au-dessus */
+  padding: 80px 20px 50px;
+  background: url("fond-homepage.png") repeat;
+  background-size: 600px 600px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  color: #2A2A2A;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  
+}
+
+.intro-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* Titres */
+h1, h2, h3 {
+  font-family: 'Domine', serif;
+  font-weight: 700;
+  color: #4c2f21; /* marron foncé */
+}
+
+.intro-section h1 {
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+}
+
+
+/* Texte normal */
+p, span {
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #2A2A2A;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+}
+
+
+
+/* Animation fade-in (comme ailleurs) */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* --------------------------
+   PETITE ÉTOILE DÉCORATIVE
+-------------------------- */
+.star-wrapper {
+  margin-top: 5px;
+  margin: 40px auto 20px;  /* moins d’espace */
+  width: 45px;             /* plus petite */
+}
+
+
+.star-draw {
+  width: 100%;
+  height: auto;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+}
+
+/* Animation d’apparition progressive */
+.star-draw.animate {
+  animation: drawStar 5s ease forwards, twinkle 3s infinite ease-in-out 4s;
+}
+
+@keyframes drawStar {
+  from {
+    stroke-dashoffset: 400; /* départ caché */
+  }
+  to {
+    stroke-dashoffset: 0;   /* l'étoile se dessine complètement */
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1);}
+  50% { opacity: 0.7; transform: scale(1.1);}
+}
+
+
+
+
+/* --------------------------
+   CALL TO ACTION BUTTON
+-------------------------- */
+
+/* titres & sous-titre (déjà posés mais à harmoniser) */
+.cta-title {
+  margin-top: 20px;
+  font-family: 'Domine', serif;
+  font-size: 1.8rem;
+  color: #4c2f21;
+  margin-bottom: 8px;
+}
+.cta-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  color: #2A2A2A;
+  margin-bottom: 24px;
+  margin-top: 20px;
+}
+
+/* Conteneur pour centrer */
+.cta-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Bouton */
+.cta-button {
+  display: flex;             
+  width: 100%;                 /* prend toute la largeur du conteneur */
+  max-width: 400px;            /* limite la largeur pour pas qu’il soit géant */
+  margin: 0 auto;              /* centre le bouton */
+  align-items: center;
+  justify-content: center;   /* ✅ centre horizontalement */
+  gap: 12px;
+
+  font-family: 'Montserrat bold', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+
+  background-color: #ECEEDF;      /* blanc cassé (reste blanc cassé au hover) */
+  color: #2A2A2A;                 /* texte gris foncé par défaut */
+  padding: 18px 36px;             /* un poil plus large/haut */
+  border-radius: 999px;           /* pill bien rond */
+  text-decoration: none;
+  cursor: pointer;
+
+  text-align: center;   /* centre le contenu horizontalement */
+  line-height: 1.2;     /* aide l’alignement vertical */
+
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+  transition: transform .2s ease, box-shadow .2s ease, color .2s ease;
+}
+
+/* Label texte (hérite la couleur du bouton) */
+.cta-button .label {
+  line-height: 1.2;        /* même ligne de base que l’icône */
+  font-weight: 600;        /* semi-bold */
+  color: inherit;
+  display: inline-block;     /* aligne comme l’icône */
+  vertical-align: middle;    /* même ligne de base que l’icône */
+}
+
+/* Icône SVG (hérite aussi la couleur du bouton via currentColor) */
+.cta-button .cta-icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;        /* inoffensif en display:block */
+  display: inline-block;
+  vertical-align: middle; /* clé pour l’alignement avec le texte */
+  margin-right: 12px;     /* espace avant le texte */
+  color: inherit;         /* suit la couleur du bouton */
+  position: relative;     
+}
+
+/* Hover : texte + icône BLEUS, fond reste blanc cassé */
+.cta-button:hover {
+  color: #BBDCE5;                   /* bleu du texte & de l’icône */
+  background-color: #8B5E3C; /* Marron foncé */      
+  transform: translateY(-1px) scale(1.04);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* Focus clavier (accessibilité) */
+.cta-button:focus-visible {
+  outline: 3px solid #BBDCE5;
+  outline-offset: 3px;
+  transition: outline-color .2s ease;
+}

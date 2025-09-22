@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A propos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../Style/stylesheet.css">
+
+  <link rel="stylesheet" href="../Contact/contact.css" />
+<div id="nav-placeholder"></div>
+
+  <!-- ✅ NAVIGATION -->
+  <nav>
+    <div id="nav-placeholder"></div>
+<script>
+  fetch('../Nav/nav.html')  // Chemin depuis Projets vers Nav
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('nav-placeholder').innerHTML = data;
+
+      // Ajoute dynamiquement le CSS
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '../Nav/nav.css';
+      document.head.appendChild(link);
+
+      // Ajoute dynamiquement le JS pour les yeux
+      const script = document.createElement("script");
+      script.src = "../Nav/nav.js";
+      document.body.appendChild(script);
+    });
+</script>
+  </nav>
+
+</head>
+
+<body class="page-contact">
+
+    <main class="contact">
+        <p>Une envie de collaboration artistique, une idée de projet, un besoin de renouveau créatif ?  </p>
+        <h1 class="fade-in">Contactez-moi juste ici !</h1>
+      
+        <form class="contact-form fade-in">
+          <label for="name">Nom ou Société</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom ou société" required>
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Votre email" required>
+      
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Quel est votre besoin et quelles sont vos idées ? "></textarea>
+      
+          <button type="submit">Envoyer</button>
+        </form>
+      </main>
+    
+      <div id="footer-placeholder"></div>
+<script src="../Footer/footer.js"></script>
+
+<script src="../Contact/contact.js"></script>
+
+</body>
+
+
+
+
+</html>

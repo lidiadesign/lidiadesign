@@ -1,0 +1,59 @@
+/* =========================
+   🌿 Global Stylesheet
+   ========================= */
+
+/* ---- Variables ---- */
+:root {
+    --color-bg: #ECEEDF;        /* fond neutre crème */
+    --color-bg-alt: #BBDCE5;    /* fond secondaire bleu clair */
+    --color-accent: #D9C4B0;    /* accent doux */
+    --color-accent-dark: #CFAB8D; /* accent plus foncé */
+    --color-text: #2A2A2A;      /* texte principal */
+    --color-text-light: #555;   /* texte secondaire */
+  }
+  
+  /* ---- Reset ---- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* ---- Texte global ---- */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+  
+  /* ---- Titres ---- */
+  h1, h2, h3 {
+    font-family: 'Domine', serif;
+    font-weight: 700;
+    color: var(--color-accent-dark);
+    margin-bottom: 1rem;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  
+  /* ---- Paragraphes ---- */
+  p {
+    margin-bottom: 1rem;
+    color: var(--color-text);
+  }
+
+/* ✨ Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

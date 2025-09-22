@@ -1,0 +1,98 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentions légales</title>
+  
+    <!-- ✅ Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+    <!-- ✅ Tes styles -->
+    <link rel="stylesheet" href="../Style/stylesheet.css" />
+    <link rel="stylesheet" href="../Mentions-legales/mentionslegales.css" />
+  </head>
+
+<body class="page-mentions">
+
+  <!-- ✅ NAV -->
+  <nav>
+    <div id="nav-placeholder"></div>
+    <script>
+    fetch('../Nav/nav.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+  
+        // Ajoute dynamiquement le CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '../Nav/nav.css';
+        document.head.appendChild(link);
+  
+        // Ajoute dynamiquement le JS pour les yeux
+        const script = document.createElement("script");
+        script.src = "../Nav/nav.js";
+        document.body.appendChild(script);
+      });
+    </script>
+  </nav>
+
+  <!-- ✅ CONTENU -->
+  <main class="mentions-container fade-in">
+    <h1>Mentions légales & Politique de confidentialité</h1>
+
+    <section>
+      <h2>Éditeur du site</h2>
+      <p>
+        Ce site est édité par <strong>Lidia Design</strong><br>
+        Email : <a href="mailto:lidiadesign.contact@gmail.com">lidiadesign.contact@gmail.com</a><br>
+        Statut : Auto-entrepreneur
+      </p>
+    </section>
+
+    <section>
+      <h2>Hébergement</h2>
+      <p>
+        Hébergeur : à compléter selon ton hébergement (ex : OVH, Infomaniak, GitHub Pages…)<br>
+        Adresse : …<br>
+        Téléphone : …
+      </p>
+    </section>
+
+    <section>
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L’ensemble des contenus (textes, images, graphismes, logo, illustrations…) présents sur ce site
+        est la propriété exclusive de <strong>Lidia Design</strong>, sauf mention contraire.
+        Toute reproduction, diffusion, modification ou exploitation sans autorisation préalable est interdite.
+      </p>
+    </section>
+
+    <section>
+      <h2>Politique de confidentialité</h2>
+      <p>
+        Les informations recueillies via le formulaire de contact ne sont utilisées que pour répondre à vos demandes.
+        Elles ne sont jamais transmises à des tiers.<br>
+        Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression de vos données.
+      </p>
+    </section>
+  </main>
+
+  <!-- ✅ FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script src="../Footer/footer.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add('visible');
+        }, 100 * i); // effet progressif
+      });
+    });
+  </script>
+
+</body>
+</html>

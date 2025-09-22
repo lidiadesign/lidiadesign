@@ -1,0 +1,61 @@
+
+
+/* === ABOUT PAGE CSS === */
+
+body {
+  background: url("fond-about.png") repeat;
+    background-size: 300px 300px; /* ajuste si besoin */ 
+}
+
+/* Conteneur principal */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+/* Photo */
+.about-photo img {
+  max-width: 380px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* Texte */
+.about-text {
+  max-width: 650px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Titre principal */
+.about-text h1 {
+  font-family: 'Domine', serif;
+  font-size: 2rem; /* plus petit qu’avant */
+  font-weight: 700;
+  color:  #ECEEDF;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+
+/* Paragraphe */
+.about-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ECEEDF; 
+  text-align: justify;
+}
+
+
+/*-COULEUR FOOTER-*/
+
+.site-footer {
+  background: url("../About/fond-about.png") repeat;
+  background-size: 300px 300px;
+}

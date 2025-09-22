@@ -1,0 +1,84 @@
+.nav-container {
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    height: 60px;
+  }
+  
+  .nav-logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+    opacity: 1; /* Logo visible directement */
+  }
+  
+  .main-menu {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+    z-index: 1000;
+    align-items: center;
+  }
+  
+  .main-menu img {
+    width: 24px;
+    height: auto;
+    filter: brightness(0) invert(1) drop-shadow(3px 3px 8px rgba(0, 0, 0, 0.6));
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .main-menu img:hover {
+    transform: scale(1.3);
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .menu-item span {
+    margin-top: 6px;
+    font-size: 0.65rem;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .menu-item:hover span {
+    opacity: 1;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .nav-logo-visible svg {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+  
+  .nav-logo-visible {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+  }
+  
+  #eye1, #eye2 {
+    transition: transform 0.1s ease-out;
+  }
