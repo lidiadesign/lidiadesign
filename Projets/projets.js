@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // Juste les images ! Les titres sont déjà dans le HTML
 const projetsData = [
   { 
-    img: "./Projets/Setdetable.jpg",
+    img: "./Projets/Setdetable.png",
     desc: "J'ai pu, en collaborant avec la direction, créer une illustration représentant l'âme et la convivialité du Café Hugo. Ces sets sont très appréciés par les habitués comme les touristes."
   },
 
@@ -38,7 +38,7 @@ const projetsData = [
      },
 
   { 
-    img: "./Projets/sitesite.jpg",
+    img: "./Projets/sitesite.png",
   desc: "Ce site web est un projet personnel de A à Z : design, direction artistique et développement. Un espace vivant et en constante évolution pour regrouper mes créations, qui évolue en même temps que moi."
   },
 
@@ -54,7 +54,7 @@ const projetsData = [
   },
 
   { 
-    img: "./Projets/LogoCafeHugo.jpg",
+    img: "./Projets/LogoCafeHugo.png",
     desc: "J’ai conçu un logo sobre et élégant représentant les emblématiques arches du lieu, afin d'accompagner la nouvelle identité visuelle du Café Hugo. Il sera utilisé sur les supports du restaurant et en ligne."
   },
 
