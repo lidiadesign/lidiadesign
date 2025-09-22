@@ -29,42 +29,42 @@ window.addEventListener('DOMContentLoaded', () => {
 // Juste les images ! Les titres sont déjà dans le HTML
 const projetsData = [
   { 
-    img: "Setdetable.jpg",
+    img: "./Projets/Setdetable.jpg",
     desc: "J'ai pu, en collaborant avec la direction, créer une illustration représentant l'âme et la convivialité du Café Hugo. Ces sets sont très appréciés par les habitués comme les touristes."
   },
 
-  { img : "Babouchka.jpg",
+  {  img: "./Projets/Babouchka.jpg",
     desc: "Voici une de mes peintures numériques d’une jeune femme au foulard, réalisée sur Procreate. Un projet personnel tout en douceur, qui me rappelle ma double nationalité."
      },
 
   { 
-    img: "sitesite.jpg",
+    img: "./Projets/sitesite.jpg",
   desc: "Ce site web est un projet personnel de A à Z : design, direction artistique et développement. Un espace vivant et en constante évolution pour regrouper mes créations, qui évolue en même temps que moi."
   },
 
   { imgs: [
-      "Chiotacrylique.jpg",
-      "smithsacrylique.jpg",
-      "poneyacrylique.jpg",
-      "perleacrylique.jpg",
-      "visageacrylique.jpg",
-      "chatespace.jpg"
+   "./Projets/Chiotacrylique.jpg",
+      "./Projets/smithsacrylique.jpg",
+      "./Projets/poneyacrylique.jpg",
+      "./Projets/perleacrylique.jpg",
+      "./Projets/visageacrylique.jpg",
+      "./Projets/chatespace.jpg"
     ],
     desc: "Exploration de visages, paysages, animaux et tout autre sujet à travers des portraits semi-réalistes réalisés aux feutres acryliques. Une façon d’exercer ma créativité de manière spontanée et colorée."
   },
 
   { 
-    img: "LogoCafeHugo.jpg",
+    img: "./Projets/LogoCafeHugo.jpg",
     desc: "J’ai conçu un logo sobre et élégant représentant les emblématiques arches du lieu, afin d'accompagner la nouvelle identité visuelle du Café Hugo. Il sera utilisé sur les supports du restaurant et en ligne."
   },
 
   { imgs: [
-      "Vinyle4.jpg",
-      "AfficheSierra.jpg",
-      "vinyle1.jpg",
-      "Vinyle2.jpg",
-      "Vinyle3.jpg",
-      "Affichehellfest.jpg"
+    "./Projets/Vinyle4.jpg",
+    "./Projets/AfficheSierra.jpg",
+    "./Projets/vinyle1.jpg",
+    "./Projets/Vinyle2.jpg",
+    "./Projets/Vinyle3.jpg",
+    "./Projets/Affichehellfest.jpg"
     ],
     desc: "Travaux issus de 6 mois d’immersion en école de design : affiches Hellfest, vinyles illustrés, animation After Effects… Un large éventail de pratiques créatives."
   },
