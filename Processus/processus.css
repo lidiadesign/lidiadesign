@@ -84,6 +84,7 @@ body, p, span, .step p, .processus .intro {
   display: flex;
   align-items: center;
   gap: 15px;
+  font-family: 'Domine', serif;
 }
 
 .step h2 img {
