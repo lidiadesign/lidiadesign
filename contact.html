@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="../Style/stylesheet.css">
 
   <link rel="stylesheet" href="../Contact/contact.css" />
-<div id="nav-placeholder"></div>
 
   <!-- ✅ NAVIGATION -->
   <nav>
@@ -44,7 +43,11 @@
         <p>Une envie de collaboration artistique, une idée de projet, un besoin de renouveau créatif ?  </p>
         <h1 class="fade-in">Contactez-moi juste ici !</h1>
       
-        <form class="contact-form fade-in">
+        <!-- ✅ Intégration Formspree -->
+    <form class="contact-form fade-in" 
+    action="https://formspree.io/f/xblzjlak" 
+    method="POST">
+
           <label for="name">Nom ou Société</label>
           <input type="text" id="name" name="name" placeholder="Votre nom ou société" required>
       
