@@ -8,29 +8,29 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // ✅ Gestion du formulaire avec Formspree
-  
+
   document.querySelector('.contact-form').addEventListener('submit', async function (e) {
     e.preventDefault(); // empêche le rechargement
-  
+
     const form = this;
     const data = new FormData(form);
-  
+    
     try {
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
         headers: { 'Accept': 'application/json' }
       });
-  
+
       if (response.ok) {
         alert("✨ Merci pour votre message, je vous répondrai au plus vite !");
         form.reset(); // vide les champs
-      } else {
-        const errorData = await response.json();
-        alert("❌ Erreur : " + (errorData.error || "Une erreur est survenue."));
       }
+
+      // ❌ Pas de else -> on ne montre rien si ça rate
     } catch (error) {
-      alert("⚠️ Impossible d’envoyer le message (connexion perdue ?)");
+      // ❌ On ignore l’erreur silencieusement
+
+      console.error("Erreur d’envoi :", error);
     }
-  }); // fermeture de l'event listener
-});
+  });});
