@@ -7,8 +7,24 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.querySelector('.contact-form').addEventListener('submit', function (e) {
-    e.preventDefault(); // empêche le rechargement de la page
-    alert("✨ Merci pour votre message, je vous répondrai au plus vite !");
-    this.reset(); // réinitialise les champs
+  
+  document.querySelector('.contact-form').addEventListener('submit', async function (e) {
+    e.preventDefault(); // empêche le rechargement
+  
+    const form = this;
+    const data = new FormData(form);
+  
+    // Envoi à Formspree
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+  
+    if (response.ok) {
+      alert("✨ Merci pour votre message, je vous répondrai au plus vite !");
+      form.reset();
+    } else {
+      alert("❌ Oups, une erreur est survenue. Réessayez plus tard.");
+    }
   });
