@@ -61,45 +61,42 @@ body {
 }
 
 
-/* --- Responsive About Page sans changer le HTML --- */
+/* --- Responsive About Page --- */
 @media (max-width: 768px) {
   .about-content {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 15px;
+    flex-direction: row;   /* photo + texte côte à côte */
+    align-items: center;
+    gap: 15px;
+    padding: 70px 15px 20px;  /* espace en haut pour éloigner de la nav */
   }
 
-  /* On force la photo + le h1 sur la même ligne */
-  .about-content .about-photo,
-  .about-content h1 {
-    display: inline-block;
-    vertical-align: middle;
+  .about-photo {
+    flex: 0 0 40%;        /* photo prend 40% */
+    max-width: 140px;
   }
 
-  .about-content .about-photo {
-    width: 40%;
-    max-width: 150px;
-    margin-right: 15px;
-  }
-
-  .about-content .about-photo img {
+  .about-photo img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 8px;
   }
 
-  .about-content h1 {
-    width: 55%;
+  .about-text {
+    flex: 1;              /* texte prend le reste */
+  }
+
+  .about-text h1 {
     font-size: 1.2em;
     font-weight: 700;
     margin: 0;
+    line-height: 1.3;
   }
 
-  /* Le texte en dessous prend toute la largeur */
   .about-text p {
     margin-top: 15px;
-    font-size: 1em;
+    font-size: 0.95em;
     line-height: 1.5;
     text-align: justify;
   }
