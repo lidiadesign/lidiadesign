@@ -344,25 +344,30 @@ p, span {
 }
 
 
-/* --- RESPONSIVE : NAVIGATION --- */
+/* --- NAVIGATION VERSION MOBILE --- */
 @media (max-width: 768px) {
   .nav-container {
-    flex-direction: column;   /* la nav passe en colonne */
-    align-items: center;      /* centrer les éléments */
-    gap: 10px;                /* petit espace entre les items */
+    flex-wrap: wrap;        /* permet d'aller à la ligne si besoin */
+    justify-content: center;
+    gap: 8px;               /* espace réduit entre éléments */
   }
 
-  .nav-logo {
-    max-width: 120px;  /* réduire un peu le logo */
+  .nav-logo svg {
+    width: 90px;            /* logo plus petit */
+    height: auto;
   }
 
   .main-menu {
-    flex-direction: column; /* les icônes + texte passent en liste verticale */
-    align-items: center;
-    gap: 8px;
+    display: flex;
+    gap: 12px;              /* rapproche les icônes */
+  }
+
+  .main-menu .menu-item img {
+    width: 20px;            /* icônes réduites */
+    height: 20px;
   }
 
   .main-menu .menu-item span {
-    font-size: 14px; /* texte plus petit */
+    font-size: 12px;        /* texte plus petit */
   }
 }
