@@ -59,3 +59,48 @@ body {
   background: url("../About/fond-about.png") repeat;
   background-size: 300px 300px;
 }
+
+
+/* --- Responsive About Page sans changer le HTML --- */
+@media (max-width: 768px) {
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  /* On force la photo + le h1 sur la même ligne */
+  .about-content .about-photo,
+  .about-content h1 {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .about-content .about-photo {
+    width: 40%;
+    max-width: 150px;
+    margin-right: 15px;
+  }
+
+  .about-content .about-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-content h1 {
+    width: 55%;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* Le texte en dessous prend toute la largeur */
+  .about-text p {
+    margin-top: 15px;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: justify;
+  }
+}
