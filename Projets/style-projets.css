@@ -240,62 +240,91 @@ body {
 }
 
 
+/* --- POPUP : layout desktop = flèches à gauche/droite de l’image --- */
+.popup-img-nav{
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* ← image au centre, flèches sur les côtés */
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+
+
 /* === VERSION MOBILE === */
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
-  /* --- GRID PROJETS --- */
-  .projects-grid {
-    display: flex;
-    flex-direction: column; /* un projet sous l’autre */
-    gap: 20px;              /* espace entre */
-    align-items: center;    /* centré */
+  /* Header un peu plus compact */
+  .projets-header{
+    padding: 60px 16px 28px;
   }
+  .projets-header h1{ font-size: 2.2rem; }
+  .projets-header p{ font-size: 1rem; }
 
-  .projects-grid .project-item {
-    width: 100%;            /* prend toute la largeur */
-    max-width: 350px;       /* limite sur mobile */
+  /* --- GRID PROJETS (1 carte par ligne) --- */
+  .projets-grid{
+    display: grid;
+    grid-template-columns: 1fr;   /* 1 colonne */
+    gap: 16px;
+    padding: 16px;
+    max-width: 520px;             /* limite visuelle sympa */
+    margin: 0 auto;
   }
-
-  .projects-grid .project-item img {
+  .projet-item{
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    aspect-ratio: 1 / 1;          /* carré plein écran */
+    border-radius: 12px;
   }
-
-  /* --- POPUP --- */
-  .popup-content {
-    width: 95%;
-    max-width: 500px;
-    padding: 15px;
-  }
-
-  .popup-content img {
+  .projet-item img{
     width: 100%;
-    height: auto;
-    margin-bottom: 10px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
   }
 
-  .popup-title {
-    font-size: 1.2rem;
-    margin: 10px 0;
+  /* --- POPUP compact/mobile --- */
+  .popup-content{
+    width: 96vw;
+    max-width: 560px;
+    padding: 16px;
+  }
+  /* Image grande mais pas plus de la moitié de la hauteur */
+  #popup-img img{
+    max-width: 100%;
+    max-height: 50vh;
+  }
+  #popup-title{
+    font-size: 1.3rem;
+    margin-top: 0.75rem;
     text-align: center;
   }
-
-  .popup-description {
-    font-size: 0.9rem;
-    line-height: 1.4;
+  #popup-desc{
+    font-size: 0.95rem;
+    line-height: 1.5;
     text-align: center;
+    padding: 0 8px;
   }
 
-  /* Flèches sous l’image */
-  .popup-arrows {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
+  /* Flèches sous l’image (gauche / droite) */
+  .popup-img-nav{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;    /* ligne 1 = image, ligne 2 = flèches */
+    gap: 10px;
   }
-
-  .popup-arrow {
+  #popup-img{ 
+    grid-column: 1 / span 2; 
+    grid-row: 1;
+  }
+  .popup-arrow-left{
+    grid-column: 1; 
+    grid-row: 2; 
+    justify-self: start;
     font-size: 2rem;
-    cursor: pointer;
+  }
+  .popup-arrow-right{
+    grid-column: 2; 
+    grid-row: 2; 
+    justify-self: end;
+    font-size: 2rem;
   }
 }
