@@ -80,11 +80,12 @@ body {
     vertical-align: top;
   }
 
-  .about-photo {
-    width: auto !important;
-    height: 100px;
-    margin: 0 auto;
-    float: center; 
+  .about-photo img{
+   max-width: 60%;
+   height: auto;
+   display: block;
+   margin: 20px auto;
+   border-radius: 12px;
   }
 
   .about-text h1 {
