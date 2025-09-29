@@ -238,3 +238,64 @@ body {
   background: url("../Projets/fond-projet.png") repeat;
   background-size: 600px 600px;
 }
+
+
+/* === VERSION MOBILE === */
+@media (max-width: 768px) {
+
+  /* --- GRID PROJETS --- */
+  .projects-grid {
+    display: flex;
+    flex-direction: column; /* un projet sous l’autre */
+    gap: 20px;              /* espace entre */
+    align-items: center;    /* centré */
+  }
+
+  .projects-grid .project-item {
+    width: 100%;            /* prend toute la largeur */
+    max-width: 350px;       /* limite sur mobile */
+  }
+
+  .projects-grid .project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* --- POPUP --- */
+  .popup-content {
+    width: 95%;
+    max-width: 500px;
+    padding: 15px;
+  }
+
+  .popup-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .popup-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .popup-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* Flèches sous l’image */
+  .popup-arrows {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  .popup-arrow {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
