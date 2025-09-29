@@ -95,7 +95,7 @@
   }
 
   .nav-logo-visible svg {
-    width: 40px !important;   /* logo réduit */
+    width: 70px !important;   /* logo réduit */
     flex: 0 0 auto; /*que largeur svg*/
   }
 

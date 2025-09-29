@@ -353,10 +353,9 @@ p, span {
     padding: 0 15px;
   }
 
-  .nav-logo-visible svg {
+  .nav-logo svg {
     width: 70px;   /* logo réduit */
     height: auto;
-    flex-shrink: 0;
   }
 
   .main-menu {
