@@ -176,7 +176,7 @@ body {
 .popup-arrow-left,
 .popup-arrow-right {
   font-size: 2.2rem;
-  color:  #BBDCE5;         /* bleu doux (équivalent Tailwind "blue-500") */
+  color: #4c2f21;        
   padding: 10px;
   cursor: pointer;
   user-select: none;

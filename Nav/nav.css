@@ -101,7 +101,8 @@
 
   .main-menu {
     display: flex;
-    gap: 10px;     /* espace entre icônes */
+    gap: 20px;   /* espace entre icônes */
+    float: right;  
   }
 
   .main-menu .menu-item img {
