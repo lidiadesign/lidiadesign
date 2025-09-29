@@ -83,8 +83,9 @@ body {
   }
 
   .about-photo {
-    width: 40%;
-    margin-right: 15px;
+    width: 70px !important;
+    height: auto;
+    margin: 0 auto;
     float: center; 
   }
 
