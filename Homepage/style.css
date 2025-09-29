@@ -342,3 +342,27 @@ p, span {
   outline-offset: 3px;
   transition: outline-color .2s ease;
 }
+
+
+/* --- RESPONSIVE : NAVIGATION --- */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;   /* la nav passe en colonne */
+    align-items: center;      /* centrer les éléments */
+    gap: 10px;                /* petit espace entre les items */
+  }
+
+  .nav-logo {
+    max-width: 120px;  /* réduire un peu le logo */
+  }
+
+  .main-menu {
+    flex-direction: column; /* les icônes + texte passent en liste verticale */
+    align-items: center;
+    gap: 8px;
+  }
+
+  .main-menu .menu-item span {
+    font-size: 14px; /* texte plus petit */
+  }
+}
