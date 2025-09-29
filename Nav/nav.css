@@ -98,6 +98,7 @@
     width: 40px !important;   /* logo réduit */
     height: auto;
     flex-shrink: 0;
+    flex: 0 0 auto; /*que largeur svg*/
   }
 
   .main-menu {
@@ -105,7 +106,10 @@
     gap: 20px;  /* espace entre icônes */
     justify-content: flex-end;  
     align-items: center;
+    flex: 1;
+    justify-content: flex-end;
   }
+
 
   .main-menu .menu-item img {
     width: 22px;
