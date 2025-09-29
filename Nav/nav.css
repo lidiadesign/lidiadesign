@@ -91,17 +91,20 @@
     display: flex;
     justify-content: space-between; /* logo à gauche, menu à droite */
     align-items: center;
-    padding: 0 10px;
+    padding: 0 15px;
   }
 
   .nav-logo svg {
-    width: 50px;   /* logo réduit */
+    width: 70px;   /* logo réduit */
     height: auto;
+    flex-shrink: 0;
   }
 
   .main-menu {
     display: flex;
-    gap: 20px;   /* espace entre icônes */  
+    gap: 20px;  /* espace entre icônes */
+    justify-content: flex-end;  
+    align-items: center;
   }
 
   .main-menu .menu-item img {
@@ -111,6 +114,5 @@
 
   .main-menu .menu-item span {
     display: none; /* masque le texte pour garder juste les icônes */
-    font-size: 12px;
   }
 }
