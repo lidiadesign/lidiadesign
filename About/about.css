@@ -81,10 +81,10 @@ body {
   }
 
   .about-photo img{
-   max-width: 60%;
+   max-width: 70%;
    height: auto;
    display: block;
-   margin: 20px auto;
+   margin: 5px auto;
    border-radius: 12px;
   }
 
