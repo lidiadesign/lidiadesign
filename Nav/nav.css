@@ -95,14 +95,13 @@
   }
 
   .nav-logo svg {
-    width: 70px;   /* logo réduit */
+    width: 50px;   /* logo réduit */
     height: auto;
   }
 
   .main-menu {
     display: flex;
-    gap: 20px;   /* espace entre icônes */
-    float: right;  
+    gap: 20px;   /* espace entre icônes */  
   }
 
   .main-menu .menu-item img {
