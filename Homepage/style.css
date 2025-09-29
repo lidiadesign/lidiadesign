@@ -361,8 +361,8 @@ p, span {
 
   .main-menu {
     display: flex;
-    gap: 18px;  /* espace entre icônes */
-    margin-left: auto;   
+    gap: 20px;  /* espace entre icônes */
+    justify-content: flex-end;  
     align-items: center;
   }
 
@@ -373,6 +373,5 @@ p, span {
 
   .main-menu .menu-item span {
     display: none; /* masque le texte pour garder juste les icônes */
-    font-size: 12px;
   }
 }
