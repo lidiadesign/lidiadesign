@@ -344,30 +344,32 @@ p, span {
 }
 
 
-/* --- NAVIGATION VERSION MOBILE --- */
+/* --- NAV MOBILE aligné proprement --- */
 @media (max-width: 768px) {
   .nav-container {
-    flex-wrap: wrap;        /* permet d'aller à la ligne si besoin */
-    justify-content: center;
-    gap: 8px;               /* espace réduit entre éléments */
+    display: flex;
+    justify-content: space-between; /* logo à gauche, menu à droite */
+    align-items: center;
+    padding: 0 10px;
   }
 
   .nav-logo svg {
-    width: 90px;            /* logo plus petit */
+    width: 70px;   /* logo réduit */
     height: auto;
   }
 
   .main-menu {
     display: flex;
-    gap: 12px;              /* rapproche les icônes */
+    gap: 10px;     /* espace entre icônes */
   }
 
   .main-menu .menu-item img {
-    width: 20px;            /* icônes réduites */
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
 
   .main-menu .menu-item span {
-    font-size: 12px;        /* texte plus petit */
+    display: none; /* masque le texte pour garder juste les icônes */
+    font-size: 12px;
   }
 }
