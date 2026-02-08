@@ -1,0 +1,143 @@
+<!DOCTYPE html> <html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lidia design</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-work">
+
+    <header>
+        <div class="container">
+
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo-ld.svg" alt="Lidia design">
+            </a>
+
+            <nav>
+                <a href="index.html">accueil</a>
+                <a href="work.html" class="active">réalisations</a>
+                <a href="about.html">à propos</a>
+                <a href="contact.html">contact</a>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            </div>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <div class="work-header">
+                <h2>mes réalisations</h2>
+                <img src="assets/images/artsystar.png" alt="" class="crayon-deco">
+            </div>
+    
+            <div class="masonry">
+                <!-- Carte projet 1 -->
+                <article class="project-card">
+                    <a href="projet1.html">
+                        <div class="project-image">
+                            <img src="assets/images/projet1.png" alt="Projet 1">
+                        </div>
+                        <h3>Le Café Hugo</h3>
+                    </a>
+                </article>
+    
+                <!-- Carte projet 2 -->
+                <article class="project-card">
+                    <a href="projet2.html">
+                        <div class="project-image">
+                            <img src="assets/images/projet2.jpg" alt="Projet 2">
+                        </div>
+                        <h3>Mes réalisations personelles</h3>
+                    </a>
+                </article>
+    
+                <!-- Carte projet 3 -->
+                <article class="project-card">
+                    <a href="projet3.html">
+                        <div class="project-image">
+                            <img src="assets/images/projet3.jpg" alt="Projet 3">
+                        </div>
+                        <h3>Projets d'école</h3>
+                    </a>
+                </article>
+    
+                <!-- Carte projet 4 -->
+                <article class="project-card hidden">
+                    <a href="projet4.html">
+                        <div class="project-image">
+                            <img src="assets/images/placeholder.svg" alt="Projet 4">
+                        </div>
+                        <h3>Nom projet</h3>
+                    </a>
+                </article>
+    
+                <!-- Carte projet 5 (pleine largeur) -->
+                <article class="project-card project-card--wide hidden">
+                    <a href="projet5.html">
+                        <div class="project-image">
+                            <img src="assets/images/placeholder.svg" alt="Projet 5">
+                        </div>
+                        <h3>Nom projet</h3>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </main>
+
+
+        <footer>
+            <div class="container">
+                <nav>
+                    <!-- Liens de navigation groupés -->
+                    <div class="footer-links">
+                        <a href="index.html">accueil</a>
+                        <a href="work.html">réalisations</a>
+                        <a href="about.html">à propos</a>
+                        <a href="contact.html">contact</a>
+                    </div>
+                    
+                    <!-- Icônes réseaux sociaux À DROITE -->
+                    <div class="social-icons">
+                        <a href="https://instagram.com/lidiadesign.png" target="_blank" aria-label="Instagram">
+                            <img src="assets/images/insta.png" alt="Instagram">
+                        </a>
+                        <a href="https://linkedin.com/in/ton-profil" target="_blank" aria-label="LinkedIn">
+                            <img src="assets/images/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </nav>
+                
+                <a href="mentionslegales.html">Mentions légales et confidentialité</a>
+                <p>© 2026 Lidia Design – Tous droits réservés</p>
+            </div>
+        </footer>
+    
+<script>
+const menuToggle = document.querySelector('.mobile-menu-toggle');
+const nav = document.querySelector('header nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('menu-open');
+});
+</script>
+
+<script src="js/animations.js"></script>
+
+    </body>
+    </html>

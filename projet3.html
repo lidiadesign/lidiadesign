@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Café Hugo - Lidia Design</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-project">
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo-ld.svg" alt="Lidia design">
+            </a>
+            <nav>
+                <a href="index.html">accueil</a>
+                <a href="work.html" class="active">réalisations</a>
+                <a href="about.html">à propos</a>
+                <a href="contact.html">contact</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+            
+            <!-- TITRE PROJET + DÉCO -->
+            <div class="project-title">
+                <h1>Mes projets d'école</h1>
+                <img src="assets/images/artsystar.png" alt="" class="project-deco">
+            </div>
+
+            <!-- GRID : IMAGE HERO + GENÈSE -->
+            <div class="project-intro">
+                <!-- Image hero à gauche (60%) -->
+                <div class="project-hero">
+                    <img src="assets/images/projet3/ecole-hero.jpg" alt="15 arrondissement">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 1200x900px (ratio 4:3) -->
+                </div>
+
+                <!-- Genèse à droite (40%) -->
+                <div class="project-genesis">
+                    <h2>Genèse projet</h2>
+                    <p>Durant mon cursus étudiant, j'ai pu durant 6 mois participer à des cours d'illustration, de direction artisique ainsi que de design au sein de l'école intuit.lab situé à Paris. J'ai pu aussi durant mon ersamus réalisé plusieurs supports visuels nécessaires aux différents devoirs. Le programme TEMA à Neoma m'a aussi permis d'exprimé ma fibre créative.</tr></p>
+                </div>
+            </div>
+
+            <!-- IMAGE PLEINE LARGEUR -->
+            <div class="project-full-image">
+                <img src="assets/images/projet3/ecole-full.jpg" alt="affiches">
+                <!-- 📐 TAILLE RECOMMANDÉE : 1400x800px (ratio 16:9) -->
+            </div>
+
+            <!-- DESCRIPTION PROJET -->
+            <div class="project-description">
+                <p>Ci-dessus mes réalisations pour des devoirs concernant des affiches (pour un jeu imaginé ou encore le Hellfest). Ci-dessous un des exercices que j'ai préféré, la création de pochettes de vinyles pour nos artistes préférés. C'est un des premiers exercices qui m'a vraiment poussé vers la découverte de soi et le test de différents styles visuels dont je n'avais pas l'habitude ni les codes.</p>
+            </div>
+
+            <!-- GALERIE 2x2 -->
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="assets/images/projet3/ecole-1.jpg" alt="Grimes">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projet3/ecole-2.jpg" alt="Lil Peep">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projet3/ecole-3.jpg" alt="The Neighbourhood">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projet3/ecole-4.jpg" alt="Tame Impala">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <nav>
+                <div class="footer-links">
+                    <a href="index.html">accueil</a>
+                    <a href="work.html">réalisations</a>
+                    <a href="about.html">à propos</a>
+                    <a href="contact.html">contact</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://instagram.com/lidiadesign.png" target="_blank" aria-label="Instagram">
+                        <img src="assets/images/insta.png" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com/in/ton-profil" target="_blank" aria-label="LinkedIn">
+                        <img src="assets/images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </nav>
+            <a href="mentionslegales.html">Mentions légales et confidentialité</a>
+            <p>© 2026 Lidia Design – Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('header nav');
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('menu-open');
+        });
+    </script>
+
+<script src="js/animations.js"></script>
+
+</body>
+</html>

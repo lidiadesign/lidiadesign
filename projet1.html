@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Café Hugo - Lidia Design</title>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-project">
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo-ld.svg" alt="Lidia design">
+            </a>
+            <nav>
+                <a href="index.html">accueil</a>
+                <a href="work.html" class="active">réalisations</a>
+                <a href="about.html">à propos</a>
+                <a href="contact.html">contact</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="container">
+            
+            <!-- TITRE PROJET + DÉCO -->
+            <div class="project-title">
+                <h1>Le Café Hugo</h1>
+                <img src="assets/images/artsystar.png" alt="" class="project-deco">
+            </div>
+
+            <!-- GRID : IMAGE HERO + GENÈSE -->
+            <div class="project-intro">
+                <!-- Image hero à gauche (60%) -->
+                <div class="project-hero">
+                    <img src="assets/images/projet1/cafe-hugo-hero.jpg" alt="Café Hugo">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 1200x900px (ratio 4:3) -->
+                </div>
+
+                <!-- Genèse à droite (40%) -->
+                <div class="project-genesis">
+                    <h2>Genèse projet</h2>
+                    <p>J'ai eu le plaisir de travailler avec le café hugo situé Place des Vosges. Durant ma collaboration avec eux, j'ai pu tout d'abord déssinné un set de table présent dans tous le restaurant, représentant le lieu avec ses habitués, sa magie et son atmosphère. J'ai en complément de ce set pu créer leur nouveau logo, inspiré des arches emblématiques de la Place, ainsi que leurs nouvelles cartes inspirés des bistrots parisens mais aussi des motifs fleuris visible sur le plafond la salle du bar. Une d.a totalement signée Lidia en toute sommes ! Ce travail était mon premier projet professionel, et ça a été une joie de travailler dessus. </tr></p>
+                </div>
+            </div>
+
+            <!-- IMAGE PLEINE LARGEUR -->
+            <div class="project-full-image">
+                <img src="assets/images/projet1/cafe-hugo-full.jpg" alt="Café Hugo détail">
+                <!-- 📐 TAILLE RECOMMANDÉE : 1400x800px (ratio 16:9) -->
+            </div>
+
+            <!-- DESCRIPTION PROJET -->
+            <div class="project-description">
+                <p>Les sets de tables et son dessin sont beaucoup appréciés par les habitués commes les touristes : les clients les colories, les prennent en photo, et certains en demande de nouveau pour les ramener chez eux ! Le dessin figure aussi sur la carte de visite du café ainsi que les mugs, et un projet de t-shirt est en cours de création avec le dessin. La carte elle a vécu un renouveau graphique qui lui permet d'être en total harmonie avec la nouvelle direction artistique sensible et élégante du lieu.</p>
+            </div>
+
+            <!-- GALERIE 2x2 -->
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="assets/images/projet1/cafe-hugo-1.jpg" alt="Café Hugo 1">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projet1/cafe-hugo-2.jpg" alt="Café Hugo 2">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projet1/cafe-hugo-3.jpg" alt="Café Hugo 3">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projet1/cafe-hugo-4.jpg" alt="Café Hugo 4">
+                    <!-- 📐 TAILLE RECOMMANDÉE : 800x800px (carré) -->
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <nav>
+                <div class="footer-links">
+                    <a href="index.html">accueil</a>
+                    <a href="work.html">réalisations</a>
+                    <a href="about.html">à propos</a>
+                    <a href="contact.html">contact</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://instagram.com/lidiadesign.png" target="_blank" aria-label="Instagram">
+                        <img src="assets/images/insta.png" alt="Instagram">
+                    </a>
+                    <a href="https://linkedin.com/in/ton-profil" target="_blank" aria-label="LinkedIn">
+                        <img src="assets/images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </nav>
+            <a href="mentionslegales.html">Mentions légales et confidentialité</a>
+            <p>© 2026 Lidia Design – Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('header nav');
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('menu-open');
+        });
+    </script>
+
+<script src="js/animations.js"></script>
+
+</body>
+</html>

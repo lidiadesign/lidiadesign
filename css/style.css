@@ -1,0 +1,1772 @@
+/* ============================================
+   LIDIA DESIGN - CSS CORRIGÉ
+   Version alignée sur le mockup Figma
+   ============================================ */
+
+/* ====== RESET & BASE ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Couleurs */
+    --bg-color: #DEDEDE;
+    --text-color: #2B4759; 
+    --accent-color: #F79C70; /* Orange pour les hover */
+    --light-bg: #EDEDED;
+    --contact-bg: #B7C2B8;
+
+    /* Espacements */
+    --max-width: 1400px; 
+    --space-small: 8px; 
+    --space-medium: 16px; 
+    --space-large: 32px; 
+    --space-xlarge: 64px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "MarionRegular", Arial, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+  padding-top: 0; /* Assure qu'il n'y a pas d'espace en haut */
+}
+
+
+/* ====== TYPOGRAPHY ====== */
+@font-face {
+    font-family: "Lieina";
+    src: url(../fonts/Lieina-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MarionRegular";
+    src: url(../fonts/MarionRegular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1,
+h2, 
+h3 {
+    font-family: "Lieina", sans-serif;
+    margin-bottom: 0.6em; /* ✅ CORRIGÉ : point au lieu de virgule */
+}
+
+h1 {
+    font-size: clamp(40px, 6vw, 80px); /* 📱 Responsive : s'adapte à l'écran */
+    line-height: 1.1;
+
+}
+
+h2 {
+    font-size: clamp(35px, 5vw, 55px); /* 📱 Responsive */
+}
+
+h3 {
+    font-size: clamp(24px, 3vw, 35px); /* 📱 Responsive */
+}
+
+p {
+    font-family: "MarionRegular", serif;
+    font-size: clamp(16px, 1.2vw, 18px); /* 📱 Responsive */
+}
+
+.display {
+    font-family: "Lieina", sans-serif;
+    margin-bottom: 0.6em; /* ✅ CORRIGÉ */
+    font-size: clamp(24px, 3vw, 35px); /* 📱 Responsive */
+    line-height: 1.4;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    max-width: var(--max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px; /* 👉 Plus d'air sur mobile */
+}
+
+/* ====== HEADER & NAVIGATION ====== */
+header {
+    position: relative;
+    z-index: 100;
+}
+
+header .container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px !important; /* Force le même padding partout */
+    margin: 0 auto !important;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+/* 👉 Navigation desktop */
+header nav {
+    display: flex;
+    gap: 25px; 
+}
+
+header nav a {
+    font-family: "Lieina", sans-serif;
+    font-size: 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease; /* 🎨 Transition douce */
+}
+
+header nav a:hover {
+    color: var(--accent-color);
+}
+
+/* 👉 Étoile pour page active */
+nav a.active {
+    position: relative;
+    padding-left: 35px;
+}
+
+nav a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px; 
+    background-image: url("../assets/images/etoile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* 📱 MENU HAMBURGER MOBILE */
+.mobile-menu-toggle {
+    display: none; /* Caché sur desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+/* ====== HERO SECTION (PAGE ACCUEIL) ====== */
+section {
+    margin-bottom: var(--space-large);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  left: -130px; /* 👈 Décale à gauche */
+  top: 0;
+  width: 40%; /* 👈 Largeur de la texture gauche */
+  height: 100%;
+  background-image: url("../assets/images/mouvement-gauche.svg"); /* 👈 Ton image gauche */
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -100px; /* 👈 Décale à droite */
+  top: 0;
+  width: 40%; /* 👈 Largeur de la texture droite */
+  height: 100%;
+  background-image: url("../assets/images/mouvement-droite.svg"); /* 👈 Ton image droite */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 👉 Contenu centré du hero */
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-text h1 {
+  margin-bottom: 12px; /* 👈 AJOUTÉ : espace entre h1 et p */
+}
+
+.hero-text p {
+  padding-top: 8px !important;
+  margin-top: 0 !important; /* 👈 Au cas où c'est un margin */
+    font-size: clamp(16px, 1.5vw, 20px);
+}
+
+/* 👉 Effet cercle sur "sensibles" */
+.circle {
+    position: relative;
+    display: inline-block;
+    padding: 0.1rem 0.3rem;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    inset: -25% -25% -5% -15%; 
+    background-image: url("../assets/images/circle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -1;
+}
+
+/* 👉 Effet soulignage sur "lien" */
+.souslignage {
+    position: relative;
+    display: inline-block;
+    padding: 0.1rem 0.3rem; 
+}
+
+.souslignage::before {
+    content: "";
+    position: absolute; 
+    inset: 0% 0% -35% 0%; 
+    background-image: url("../assets/images/sous-lignage.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    z-index: -1;
+}
+
+/* 👉 Placeholder étoile hero (comme mockup) */
+.hero-visual {
+    display: grid;
+    place-items: center;
+    padding: 40px 20px;
+}
+
+.ph--home-hero {
+    width: min(500px, 80vw);
+    margin-top: 24px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ph--home-hero img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ====== SECTION PROJETS (Dernières réalisations) ====== */
+section h2 {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+section article {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 👈 2/3 pour image, reste pour texte */
+  gap: 40px; /* 👈 Plus d'espace entre image et texte */
+  align-items: start;
+  background-color: var(--light-bg);
+  padding: 32px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 📸 Zone image à gauche (TAILLE FIXE) */
+section article .project-image {
+  width: 100%;
+  height: 450px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+section article .project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+section article:hover {
+    transform: translateY(-4px); /* 🎨 Effet hover subtil */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Texte à droite */
+section article .project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+section article h3 {
+  margin: 0;
+}
+
+section article p {
+  margin-bottom: 16px; /* 👈 Espace avant "En savoir plus" */
+}
+
+
+/* ➡️ Lien "En savoir plus" avec flèche - VERSION UNIQUE */
+section article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px; /* Espace entre texte et flèche */
+  margin-top: 20px; /* 👈 AJOUTÉ : espace avec le paragraphe */
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: "MarionRegular", serif;
+  transition: all 0.3s ease;
+}
+
+section article a::after {
+  content: "";
+  width: 30px;
+  height: 16px;
+  background: url("../assets/images/fleche.png") no-repeat center / contain;
+  flex-shrink: 0;
+}
+
+section article a:hover {
+  color: var(--accent-color);
+  transform: translateX(4px); /* 🎨 Déplace légèrement à droite */
+}
+
+/* ====== SECTION ABOUT (Mini sur accueil) ====== */
+.index-about {
+    display: grid;
+    grid-template-columns: 1fr 240px; /* Texte à gauche | Visuel à droite */
+    gap: 48px;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.index-about-text p {
+    margin-bottom: 20px;
+}
+
+/* 👉 Bouton "Découvrir mon approche" avec flèche */
+.index-about-text a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 520px;
+    margin-top: 24px;
+    padding: 18px 24px;
+    background: var(--light-bg);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: "MarionRegular", serif;
+    transition: all 0.3s ease;
+}
+
+.index-about-text a:hover {
+    background: #e0e0e0;
+    transform: translateX(4px); /* 🎨 Déplace légèrement à droite */
+}
+
+.index-about-text a::after {
+    content: "";
+    width: 38px;
+    height: 20px;
+    background: url("../assets/images/fleche.png") no-repeat center / contain;
+    flex-shrink: 0;
+}
+
+/* 👉 Placeholder visuel about */
+.ph--home-hero-about {
+    width: 300px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: start; /* ✅ Aligne en haut */
+}
+
+.ph--home-hero-about img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ====== BOUTON CONTACT (Accueil) ====== */
+.index-contact {
+  position: relative; /* 👈 AJOUTE juste la possibilité de positionner les textures */
+    display: grid;
+    place-items: center;
+    padding: 80px 20px;
+    margin: 40px 0;
+}
+
+
+/* Textures autour du bouton */
+.index-contact::before {
+  content: "";
+  position: absolute;
+  left: -140px;
+  bottom: -150px;
+  width: 600px; /* 👈 TAILLE FIXE pour les SVG */
+  height: 600px; /* 👈 TAILLE FIXE */
+  background-image: url("../assets/images/mouvement-gauche.svg");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+  z-index: -1; /* 👈 IMPORTANT : derrière le bouton */
+  pointer-events: none;
+}
+
+.index-contact::after {
+  content: "";
+  position: absolute;
+  right: -130px;
+  bottom: -150px;
+  width: 600px; /* 👈 TAILLE FIXE pour les SVG */
+  height: 600px; /* 👈 TAILLE FIXE */
+  background-image: url("../assets/images/mouvement-droite.svg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+  z-index: -1; /* 👈 IMPORTANT : derrière le bouton */
+  pointer-events: none;
+}
+
+
+.index-contact--btn {
+  font-family: "Lieina", sans-serif;
+  font-size: clamp(28px, 3.5vw, 35px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 70px; /* 👈 RÉDUIT le padding */
+  background-image: url("../assets/images/filled-circle.png");
+  background-repeat: no-repeat;
+  background-position: 88% 18%; 
+  background-size: 100% auto; /* 👈 S'adapte à la largeur */
+
+    position: relative;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.index-contact--btn:hover {
+    transform: scale(1.05); /* 🎨 Grossit légèrement au hover */
+}
+
+/* 👉 Étoiles autour du bouton */
+.index-contact--btn::before,
+.index-contact--btn::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url("../assets/images/etoile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.index-contact--btn::before {
+    left: -40px;
+    top: 25%;
+    transform: translateY(-50%) rotate(30deg);
+}
+
+.index-contact--btn::after {
+    right: -40px;
+    top: 80%;
+    transform: translateY(-50%) rotate(-70deg);
+}
+
+
+
+
+
+
+
+
+
+/* ====== FOOTER ====== */
+footer {
+  padding: 40px 0 32px 0;
+  margin-top: 0;
+  position: relative;
+  overflow: visible; /* 👈 Permet aux étoiles de dépasser */
+}
+
+/* 🌟 Mini étoile en bas à droite */
+footer::after {
+  content: "";
+  position: absolute;
+  right: 40px; /* 👈 40px du bord droit */
+  bottom: 40px; /* 👈 40px du bas */
+  width: 60px; /* 👈 Petite étoile */
+  height: 60px;
+  background-image: url("../assets/images/etoile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 1; /* 👈 Un peu transparente */
+}
+
+
+footer .container {
+  background-color: var(--light-bg);
+  border-radius: 16px; 
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 1; /* 👈 En dessous des étoiles */
+}
+
+/* 🔗 Navigation avec icônes à DROITE */
+footer nav {
+  display: flex;
+  justify-content: space-between; /* 👈 Liens à gauche, icônes à droite */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Groupe des liens texte */
+footer nav .footer-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+footer nav .footer-links a {
+  font-family: "Lieina", sans-serif;
+  font-size: 25px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer nav .footer-links a:hover {
+  color: var(--accent-color);
+}
+
+/* 📱 Icônes réseaux sociaux À DROITE */
+footer nav .social-icons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+footer nav .social-icons a {
+  display: block;
+  width: 28px;
+  height: 28px;
+  /* 👈 SUPPRIME les filtres d'ici */
+}
+
+footer nav .social-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* 👇 GARDE SEULEMENT CES FILTRES */
+  filter: brightness(0) saturate(100%) invert(78%) sepia(7%) saturate(481%) hue-rotate(94deg) brightness(94%) contrast(89%);
+  transition: filter 0.3s ease;
+}
+
+footer nav .social-icons a:hover img {
+  /* 👇 GARDE SEULEMENT CE FILTRE */
+  filter: brightness(0) saturate(100%) invert(64%) sepia(36%) saturate(628%) hue-rotate(327deg) brightness(101%) contrast(92%);
+}
+
+/* 📄 Mentions légales et copyright */
+footer > .container > a {
+  font-family: "MarionRegular", serif;
+  font-size: 14px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer > .container > a:hover {
+  color: var(--accent-color);
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-family: "MarionRegular", serif;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  footer nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  footer nav .footer-links {
+      flex-direction: column;
+      gap: 12px;
+  }
+  
+  footer nav .social-icons {
+      margin-top: 12px;
+  }
+  
+  footer .container {
+      padding: 24px;
+  }
+  
+  footer::after {
+      width: 120px;
+      height: 120px;
+      right: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+/* ====== PAGE WORK (Réalisations) ====== */
+.page-work {
+    background: #EDEDED;
+}
+
+.page-work .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* 👉 Header avec titre + déco crayon */
+.work-header {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.work-header h2 {
+    display: inline-block;
+    margin: 0;
+}
+
+.crayon-deco {
+    display: inline-block; /* 👈 Change de absolute à inline */
+    margin-left: 16px; /* 👈 Petit espace entre titre et dessin */
+    vertical-align: top;
+    width: 120px;
+    height: auto;
+}
+
+/* 👉 MASONRY GRID Pinterest */
+.masonry {
+    column-count: 2;
+    column-gap: 24px;
+}
+
+/* 👉 CARTES PROJETS */
+.project-card {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* 👉 IMAGE du projet */
+.project-image {
+    width: 100%;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* 👉 TITRE du projet */
+.project-card h3 {
+    padding: 20px 24px;
+    margin: 0;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover h3 {
+    color: var(--accent-color); /* Orange au hover */
+}
+
+/* 👉 Carte PLEINE LARGEUR (optionnel) */
+.project-card--wide {
+    column-span: all;
+}
+
+
+
+
+
+
+
+/* ====== PAGE ABOUT ====== */
+
+/* Background de la page */
+body.page-about {
+    background-color: #DEDEDE;
+}
+
+
+/* INTRO : Photo 1/3 + Texte 2/3 */
+.about-intro {
+    padding: 60px 0 40px 0;
+    position: relative; /* Pour les textures */
+}
+
+/* 👉 TEXTURES GAUCHE/DROITE (comme index) */
+.about-intro::before {
+    content: "";
+    position: absolute;
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background-image: url("../assets/images/mouvement-gauche.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: -2;
+    display: none;
+}
+
+.about-intro::after {
+    content: "";
+    position: absolute;
+    right: -350px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background-image: url("../assets/images/mouvement-droite.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: -2;
+    display: none;
+}
+
+.about-intro h2 {
+    margin-bottom: 40px;
+}
+
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-photo {
+    width: 100%;
+    max-width: 350px;
+    margin-left: auto; /* 👈 AJOUTE - Pousse la photo vers la droite */
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* 👉 TYPO LIEINA pour le texte intro */
+.about-intro-text .display {
+    font-family: "Lieina", serif;
+    font-size: clamp(24px, 2.5vw, 32px); /* Plus grand */
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* 👉 DÉCORATIONS */
+.highlight-bg {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 2px 8px;
+    border-radius: 14px;
+}
+
+/* 👉 CERCLE autour de "sensible" */
+.circle-about {
+    position: relative;
+    display: inline-block;
+}
+
+.circle-about::after {
+    content: "";
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 120%; /* 👈 AJUSTE ICI (100% = taille du texte) */
+    height: 180%; /* 👈 AJUSTE ICI */
+    background-image: url("../assets/images/circle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* 👉 SOULIGNEMENT sous "vivant" */
+.souslignage-about {
+    position: relative;
+    display: inline-block;
+}
+
+.souslignage-about::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-image: url("../assets/images/sous-lignage.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2;
+}
+
+/* PHILOSOPHIE : Texte 50% + Image 50% - Fond #EDEDED */
+.about-philosophy {
+    background-color: #EDEDED;
+    border-radius: 24px;
+    padding: 60px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-philosophy h3 {
+    margin-bottom: 20px;
+}
+
+.about-philosophy .about-text p {
+    line-height: 1.8;
+}
+
+.about-visual {
+    background: transparent;
+    border-radius: 16px;
+    padding: 0;
+    width: auto;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.about-visual img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* CONCRÈTEMENT : Image 1/3 + Texte 2/3 - Fond #EDEDED */
+.about-concrete {
+    background-color: #EDEDED;
+    border-radius: 24px;
+    padding: 60px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: -30px; /* 👈 AJOUTE - Remonte de 30px, ajuste si besoin */
+}
+
+.about-concrete h3 {
+    margin-bottom: 20px;
+    justify-content: right;
+}
+
+.about-concrete .about-text {
+    text-align: justify;
+}
+
+.about-concrete .about-text p {
+    line-height: 1.8;
+}
+
+/* GRAND RECTANGLE PLEINE LARGEUR */
+.about-wide {
+    background: #EDEDED;
+    border-radius: 24px;
+    padding: 0; /* 👈 CHANGE - Enlève tout le padding */
+    margin: 40px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px; /* 👈 Hauteur du rectangle */
+}
+
+.about-wide img {
+    width: 100%;
+    height: 100%; /* 👈 CHANGE de auto à 100% */
+    min-height: 400px; /* 👈 AJOUTE - Force une hauteur minimum */
+    object-fit: cover; /* 👈 CHANGE de contain à cover */
+    border-radius: 16px;
+}
+
+
+/* CITATION FINALE */
+.about-quote {
+    text-align: center;
+    padding: 120px 0 80px 0; /* Plus d'espace en haut */
+}
+
+
+.about-quote h2 {
+    font-family: "Lieina", serif; /* Typo Lieina */
+    font-size: clamp(48px, 6vw, 72px); /* BEAUCOUP plus grand */
+    margin: 0 auto 60px auto;
+    line-height: 1.3;
+    max-width: 1000px; /* Largeur max pour centrage */
+    text-align: center;
+}
+
+.about-quote-visual {
+    width: 250px; /* Plus grand */
+    height: 250px;
+    background: transparent;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* ====== PAGE CONTACT ====== */
+.page-contact {
+    background: var(--contact-bg);
+}
+
+.page-contact .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.page-contact h2 {
+    margin-bottom: 40px;
+}
+
+/* 👉 GRID : Bloc contact + Placeholder à droite */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; 
+    gap: 60px;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* 👉 Bloc de texte contact */
+.contact-text {
+    text-align: left;
+    background-color: var(--light-bg);
+    border-radius: 16px; 
+    padding: 60px 48px; /* ✅ Plus de padding vertical + horizontal */
+}
+
+.contact-text p {
+    margin-bottom: 16px;
+    margin-top: 30px;
+}
+
+.contact-text .display {
+    margin-top: 40px;
+    font-family: "Lieina", serif;
+}
+
+/* 👉 LIENS cliquables avec hover orange */
+.contact-text a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-text a:hover {
+    color: var(--accent-color); /* Orange au hover */
+}
+
+/* 👉 Placeholder image/gif à droite */
+.contact-visual {
+    width: 100%;
+    height: 100%; /* ✅ Prend toute la hauteur du bloc texte */
+    min-height: 450px; /* ✅ Minimum de hauteur */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 👈 AJOUTE - Pousse vers la droite */
+    padding-right: 40px; /* 👈 AJOUTE - Ajuste l'espace depuis le bord */
+}
+
+/* 👉 Citation contact */
+.contact-quote {
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.contact-quote h1 {
+    font-family: "Lieina", serif;
+    font-size: clamp(52px, 6vw, 80px); /* ✅ Plus grand */
+    margin: 0 auto 60px auto;
+    line-height: 1.3;
+    max-width: 1100px; /* ✅ Un peu plus large */
+    color: var(--text-color);
+}
+
+/* 👉 Placeholder du bas */
+.contact-quote .ph--contact {
+    height: auto; /* ✅ Garde proportions */
+    max-width: 1000px; /* Largeur max pour centrage */
+    margin: 0 auto;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-quote .ph--contact img {
+    width: 450px; /* Plus grand */
+    height: auto;
+    background: transparent;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ====== RESPONSIVE MOBILE ====== */
+
+/* 📱 TABLETTE (< 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    /* INDEX */
+    .index-about {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .ph--home-hero-about {
+        margin: 0 auto;
+    }
+
+    .index-about-text a {
+        margin: 24px auto 0;
+    }
+
+    /* ABOUT */
+    .about-intro-grid,
+    .about-philosophy,
+    .about-concrete {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-philosophy,
+    .about-concrete {
+        padding: 40px 24px;
+    }
+    
+    .about-concrete .about-text {
+        text-align: left;
+    }
+
+    .about-photo {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    /* CONTACT */
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-visual {
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .contact-visual img {
+        width: 70%;
+        max-width: 350px;
+    }
+
+    /* WORK */
+    .crayon-deco {
+        width: 70px;
+    }
+
+    /* PROJET */
+    .project-intro {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        aspect-ratio: auto;
+    }
+}
+
+/* 📱 MOBILE (< 768px) */
+@media (max-width: 768px) {
+    /* Menu hamburger visible */
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    /* Navigation mobile cachée par défaut */
+    header nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transition: right 0.4s ease;
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+        z-index: 99;
+    }
+
+    /* Menu ouvert */
+    header nav.menu-open {
+        right: 0;
+    }
+
+    header nav a {
+        font-size: 32px;
+    }
+
+    /* TYPOGRAPHIE */
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    .ph--home-hero {
+        width: min(400px, 75vw);
+    }
+
+    /* BOUTON CONTACT */
+    .index-contact--btn {
+        padding: 30px 50px;
+        font-size: 28px;
+    }
+
+    .index-contact--btn::before,
+    .index-contact--btn::after {
+        width: 30px;
+        height: 30px;
+    }
+
+    .index-contact--btn::before {
+        left: -25px;
+    }
+
+    .index-contact--btn::after {
+        right: -25px;
+    }
+
+    /* WORK - Masonry 1 colonne */
+    .masonry {
+        column-count: 1;
+    }
+
+    .crayon-deco {
+        width: 60px;
+    }
+
+    /* ABOUT */
+    .about-intro::before,
+    .about-intro::after {
+        display: none;
+    }
+
+    .about-intro-text .display {
+        font-size: 20px;
+    }
+
+    .about-intro-grid,
+    .about-philosophy,
+    .about-concrete {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    /* CONTACT */
+    .contact-quote,
+    .about-quote {
+        padding: 40px 20px;
+    }
+
+    .contact-quote h1,
+    .about-quote h2 {
+        font-size: clamp(32px, 5vw, 48px);
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-visual {
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    /* PROJET */
+    .project-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-deco {
+        width: 70px;
+    }
+    
+    .project-genesis {
+        padding: 24px;
+    }
+
+    .project-title h1 {
+        font-size: 36px;
+    }
+}
+
+/* 📱 TRÈS PETIT MOBILE (< 480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .index-contact--btn {
+        padding: 24px 40px;
+        font-size: 24px;
+    }
+
+    footer .container {
+        padding: 24px 16px;
+    }
+
+    footer nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .ph--home-hero {
+        width: min(350px, 90vw);
+    }
+
+    .about-intro-text .display {
+        font-size: 18px;
+    }
+
+    .project-genesis {
+        padding: 20px;
+    }
+
+    .contact-visual img {
+        width: 90%;
+    }
+
+    .project-title h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* ====== UTILS ====== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== PAGE PROJET ====== */
+.page-project {
+    background: #f8f8f8;
+}
+
+.page-project .container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* 👉 TITRE + DÉCO */
+.project-title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.project-title h1 {
+    font-size: clamp(42px, 5vw, 64px);
+    margin: 0;
+}
+
+.project-deco {
+    width: 100px;
+    height: auto;
+}
+
+/* 👉 INTRO : Image hero 60% + Genèse 40% */
+.project-intro {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* 60% / 40% */
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: start;
+}
+
+.project-hero {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.project-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-genesis {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.project-genesis h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.project-genesis p {
+    line-height: 1.8;
+}
+
+/* 👉 IMAGE PLEINE LARGEUR */
+.project-full-image {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+
+.project-full-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 👉 DESCRIPTION */
+.project-description {
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.project-description p {
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* 👉 GALERIE 2x2 */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.gallery-item {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 1; /* Force le carré */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+/* 📱 RESPONSIVE */
+@media (max-width: 1024px) {
+    .project-intro {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-item {
+        aspect-ratio: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-deco {
+        width: 70px;
+    }
+    
+    .project-genesis {
+        padding: 24px;
+    }
+
+    /* Footer padding */
+    footer .container {
+        padding: 32px 24px !important; /* 👈 Le !important force le padding */
+    }
+    
+    /* Étoile plus petite */
+    footer::after {
+        width: 60px !important; /* 👈 Réduit la taille */
+        height: 60px !important;
+        right: 20px;
+        bottom: 20px;
+    }
+    
+}
+
+
+
+
+
+/* ====== PAGE MENTIONS LÉGALES ====== */
+.legal-section {
+    margin-bottom: 60px;
+}
+
+.legal-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.legal-section p {
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.legal-section a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.legal-section a:hover {
+    color: var(--green-color);
+    text-decoration: underline;
+}
+
+.legal-section strong {
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/* ====== ANIMATIONS & MICRO-INTERACTIONS ====== */
+
+/* 🌊 Animation au chargement pour toutes les pages */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Applique l'animation à TOUS les éléments principaux */
+.hero-text,
+.hero-visual,
+article,
+.index-about,
+.index-contact,
+.about-intro-grid,
+.about-philosophy,
+.about-concrete,
+.about-wide,
+.about-quote,
+.contact-container,
+.contact-quote,
+.project-card,
+.project-title,
+.project-intro,
+.project-full-image,
+.project-description,
+.project-gallery,
+footer {
+    animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Délais progressifs pour articles et cartes */
+article:nth-child(1) { animation-delay: 0.1s; }
+article:nth-child(2) { animation-delay: 0.2s; }
+article:nth-child(3) { animation-delay: 0.3s; }
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* 🎴 HOVER CARTES PROJETS */
+.project-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+    transition: color 0.3s ease;
+}
+
+/* 🎨 OMBRES sur blocs About */
+.about-philosophy,
+.about-concrete,
+.about-wide {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.about-philosophy:hover,
+.about-concrete:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* 🎬 FADE-IN GIFS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.ph--home-hero img,
+.ph--home-hero-about img,
+.about-visual img,
+.contact-visual img,
+.about-wide img,
+.about-quote-visual img,
+.contact-quote .ph--contact img {
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* 🖱️ CURSEUR PERSONNALISÉ */
+body {
+    cursor: url('../assets/images/cursor.png'), auto;
+}
+
+a, button, .project-card, .index-contact--btn {
+    cursor: url('../assets/images/cursor-pointer.png'), pointer;
+}
+
+/* ✨ TRANSITIONS GLOBALES */
+a, button, img, .project-card, .project-image {
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Images zoom au hover */
+.project-image:hover img {
+    transform: scale(1.05);
+}
+
+.project-image {
+    overflow: hidden;
+}
+
+/* 🌟 ÉTOILE FOOTER qui brille */
+footer .social-icons a img {
+    transition: all 0.4s ease;
+}
+
+footer .social-icons a:hover img {
+    filter: brightness(1.3) drop-shadow(0 0 8px rgba(247, 156, 112, 0.6));
+    transform: scale(1.1);
+}
+
+/* ⭐ ÉTOILE ARTSY qui gigote */
+@keyframes subtleWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+}
+
+.crayon-deco,
+.project-deco {
+    animation: subtleWiggle 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+.crayon-deco:hover,
+.project-deco:hover {
+    animation: none;
+}
+
+
+
+
+
+/* Cache les éléments avec classe hidden */
+.hidden {
+    display: none !important;
+}

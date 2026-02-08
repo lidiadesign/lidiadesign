@@ -1,0 +1,163 @@
+<!DOCTYPE html> <html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lidia design</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+      <div class="container">
+
+        <a href="index.html" class="logo">
+        <img src="assets/images/logo-ld.svg" alt="Lidia design">
+        </a>
+
+            <nav>
+                <a href="index.html" class="active">accueil</a>
+                <a href="work.html">réalisations</a>
+                <a href="about.html">à propos</a>
+                <a href="contact.html">contact</a>
+            </nav>
+
+            <button class="mobile-menu-toggle" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+
+          </div>
+
+    </header>
+
+    <main>
+        <!-- SECTION 1 : HERO (présentation) -->
+        <section>
+          <div class="hero">
+            <div class="container">
+          <div class="hero-text">
+        <h1>des identités <span class="circle">sensibles</span>, pensées pour créer du <span class="souslignage">lien</span>.</h1> 
+        <p>Design et illustration pour des identités humaines et singulières.</p>
+          </div>
+          
+          <div class="hero-visual">
+        <div class="ph ph--home-hero">
+    <img src="../assets/gifs/index-hero.gif" alt="">
+        </div>
+
+          </div>
+        </div>
+        </div>
+
+        </section>
+
+        <div class="container">
+        <!-- SECTION 2 : DERNIÈRES RÉALISATIONS -->
+         <section>
+            <h2>dernières réalisations</h2>
+       
+
+         <!-- Un projet (placeholder) -->
+          <article>
+            <div class="project-image"> <img src="../assets/images/index1.jpg"></div>
+            <div class="project-text">
+            <h3>Le Café Hugo</h3>
+            <p>Identité visuelle complète pour le Café Hugo, Place des Vosges à Paris : sets de table illustrés, logo inspiré des arches emblématiques et cartes aux motifs parisiens. Une direction artistique sensible et élégante, signée Lidia.</p>
+            <a href="projet1.html">En savoir plus</a>
+            </div>
+          </article>
+
+             <!-- Un projet (placeholder) -->
+             <article>
+                <div class="project-image"> <img src="../assets/images/index2.jpg"> </div>
+                <div class="project-text">
+                <h3>Mes réalisations personelles</h3>
+                <p>Exploration libre de différents médiums : aquarelle, digital et peinture acrylique. Un style en constant changement, entre réalisme et surréalisme, où l'expérimentation et l'expression personnelle guident chaque création.</p>
+                <a href="projet2.html">En savoir plus</a>
+                </div>
+              </article>
+
+                 <!-- Un projet (placeholder) -->
+          <article>
+            <div class="project-image"> <img src="../assets/images/index3.jpg"> </div>
+            <div class="project-text">
+            <h3>Projets d'école</h3>
+            <p>Réalisations créées durant mon cursus à Intuit.lab et Neoma : affiches, pochettes de vinyles et supports visuels variés. Des exercices qui m'ont permis de découvrir mon style et d'expérimenter avec de nouveaux codes graphiques.</p>
+            <a href="projet3.html">En savoir plus</a>
+            </div>
+          </article>
+
+        </section>
+
+
+        <!-- SECTION 3 : Mini about -->
+         <section class="index-about">
+          <div class="index-about-text">
+            <p class="display">j’aborde chaque projet avec attention et sensibilité, en prenant le temps d’écouter, de comprendre et de créer.</p>
+            <p class="display"> j’imagine des identités illustrées, construites main dans la main avec celles et ceux qui portent leurs projets, pour donner du sens et créer du lien.</p> 
+            <a href="about.html">Découvrir mon approche</a>  
+          </div> 
+
+          
+            
+            <div class="ph ph--home-hero-about">
+              <img src="../assets/images/index-about.png" alt="">
+            </div>
+         </section>
+
+         <!-- SECTION 4 : Call to Action Contact -->
+          <section class="index-contact">
+            <a  class="index-contact--btn" href="contact.html">Me contacter</a>
+          </section>
+          </div>
+    </main>
+
+    <footer>
+      <div class="container">
+          <nav>
+              <!-- Liens de navigation groupés -->
+              <div class="footer-links">
+                  <a href="index.html">accueil</a>
+                  <a href="work.html">réalisations</a>
+                  <a href="about.html">à propos</a>
+                  <a href="contact.html">contact</a>
+              </div>
+              
+              <!-- Icônes réseaux sociaux À DROITE -->
+              <div class="social-icons">
+                  <a href="https://instagram.com/lidiadesign.png" target="_blank" aria-label="Instagram">
+                      <img src="assets/images/insta.png" alt="Instagram">
+                  </a>
+                  <a href="https://linkedin.com/in/ton-profil" target="_blank" aria-label="LinkedIn">
+                      <img src="assets/images/linkedin.png" alt="LinkedIn">
+                  </a>
+              </div>
+          </nav>
+          
+          <a href="mentionslegales.html">Mentions légales et confidentialité</a>
+          <p>© 2026 Lidia Design – Tous droits réservés</p>
+      </div>
+  </footer>
+
+    <script>
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const nav = document.querySelector('header nav');
+      
+      menuToggle.addEventListener('click', () => {
+          nav.classList.toggle('menu-open');
+      });
+      </script>
+      
+      <script src="js/animations.js"></script>
+
+</body>
+</html>
