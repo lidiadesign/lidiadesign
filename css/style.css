@@ -242,7 +242,7 @@ section {
 }
 
 .hero-text p {
-  padding-top: 8px !important;
+  padding-top: 50px !important;
   margin-top: 0 !important; /* 👈 Au cas où c'est un margin */
     font-size: clamp(16px, 1.5vw, 20px);
 }
@@ -257,7 +257,7 @@ section {
 .circle::before {
     content: "";
     position: absolute;
-    inset: -25% -25% -5% -15%; 
+    inset: -35% -35% -15% -25%; 
     background-image: url("../assets/images/circle.png");
     background-repeat: no-repeat;
     background-size: contain;
@@ -275,7 +275,7 @@ section {
 .souslignage::before {
     content: "";
     position: absolute; 
-    inset: 0% 0% -35% 0%; 
+    inset: 10% 10% -65% 10%; 
     background-image: url("../assets/images/sous-lignage.png");
     background-repeat: no-repeat;
     background-size: contain;
